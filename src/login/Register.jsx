@@ -16,7 +16,7 @@ const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('http://localhost:8000/register', { name, email, password })
+        axios.post('https://lost-backend-hvej.onrender.com/register', { name, email, password })
             .then(result => {
                 if (result.data === "Already registered") {
                     Swal.fire({

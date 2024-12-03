@@ -135,7 +135,8 @@ footer a:hover{
 .lfh1{
     margin: 0px 0 50px 0;
     text-align: center;
-   color: white;
+   color: yellow;
+   
    /* font-size: 2.2rem; */
    position: relative;
    display: block
@@ -444,6 +445,7 @@ nav ul{
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    padding-left: 0rem;
     
 }
 .active{
@@ -476,6 +478,7 @@ nav{
 
     .lfh1{
         margin-bottom: 25px;
+        color:#fdf004;
         font-size: 1.8rem ;
     }
     .lfh1::after{

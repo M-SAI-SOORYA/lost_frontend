@@ -5,6 +5,14 @@
 body{
     background-color: black;
 }
+.backk{
+    background-color: rgb(14 14 14);
+    border-color: #fdf004;
+    border-width: 20px;
+}
+strong{
+    color: yellow;
+}
 h1{
     color: var(--yellow);
     font-size: 5rem;

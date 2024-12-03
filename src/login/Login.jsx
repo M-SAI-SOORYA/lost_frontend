@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import ParticlesBackground from "../components/Particle.jsx";
 import './log.css';
 import Swal from 'sweetalert2';
-const Login = ({setIsAuthenticated }) => {
+const Login = ({ setIsAuthenticated }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
+
         axios.post('https://lost-backend-hvej.onrender.com/login', { email, password })
             .then(result => {
                 if (result.data === "Success") {
@@ -31,8 +31,7 @@ const Login = ({setIsAuthenticated }) => {
                     alert('Incorrect password! Please try again.');
                     setIsAuthenticated(false);
                     localStorage.setItem("isAuthenticated", "false");
-                    // navigate('/home');
-                    // setIsAuthenticated(false);
+
                 }
             })
             .catch(err => console.log(err));
@@ -49,7 +48,11 @@ const Login = ({setIsAuthenticated }) => {
             </div>
 
             <div className="d-flex justify-content-center align-items-center flex-grow-1 px-3">
-                <div className="bg-white p-4 rounded shadow w-100" style={{ maxWidth: '700px' }}>
+                <div
+                    className="p-4 w-100 backk"
+                    style={{ maxWidth: '700px', border: '2px solid yellow', borderRadius: '10px' }}
+
+                >
                     <h2 className="mb-3 text-primary text-center">LOGIN</h2>
 
                     <form onSubmit={handleSubmit}>
@@ -57,11 +60,11 @@ const Login = ({setIsAuthenticated }) => {
                             <label htmlFor="exampleInputEmail1" className="form-label">
                                 <strong>Email Id</strong>
                             </label>
-                            <input 
-                                type="email" 
+                            <input
+                                type="email"
                                 placeholder="Enter Email"
-                                className="form-control" 
-                                id="exampleInputEmail1" 
+                                className="form-control"
+                                id="exampleInputEmail1"
                                 onChange={(event) => setEmail(event.target.value)}
                                 required
                             />
@@ -71,11 +74,11 @@ const Login = ({setIsAuthenticated }) => {
                             <label htmlFor="exampleInputPassword1" className="form-label">
                                 <strong>Password</strong>
                             </label>
-                            <input 
-                                type="password" 
+                            <input
+                                type="password"
                                 placeholder="Enter Password"
-                                className="form-control" 
-                                id="exampleInputPassword1" 
+                                className="form-control"
+                                id="exampleInputPassword1"
                                 onChange={(event) => setPassword(event.target.value)}
                                 required
                             />
@@ -84,7 +87,7 @@ const Login = ({setIsAuthenticated }) => {
                         <button type="submit" className="btn btn-primary w-100">Login</button>
                     </form>
 
-                    <p className="mt-3 text-center">Don't have an account?</p>
+                    <p className="mt-3 text-center" style={{color:"yellow"}}>Don't have an account?</p>
                     <Link to="/register" className="btn btn-secondary w-100">Register</Link>
                 </div>
             </div>

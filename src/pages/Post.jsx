@@ -49,7 +49,7 @@ export default function Post() {
       <Navbar />
       <section>
         <h1 className="lfh1">Post Found Item</h1>
-        <div className="form-container">
+        <div className="form-container" style={{border: '2px solid yellow', borderRadius: '10px'}}>
           <h2>Please fill all the required fields</h2>
           <form className="form" encType="multipart/form-data">
             <div className="input-container">

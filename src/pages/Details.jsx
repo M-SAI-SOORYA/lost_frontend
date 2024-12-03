@@ -74,20 +74,12 @@ function Details() {
                 <EmailIcon /> Email
               </a>
             </div>
-            <h1>{item.title}</h1>
+            <h2>{item.title}</h2>
             <div className="details-container">
               <p>Founder</p>
               <p>{item.name}</p>
             </div>
 
-            {/* <div className="details-container">
-            <p>Email</p>
-            <p>arjuncvinod@mail.com</p>
-          </div>
-          <div className="details-container">
-            <p>Phone</p>
-            <p>8494865475</p>
-          </div> */}
             <div className="details-container desc">
               {/* <p>Description</p> */}
               <p>{item.description}</p>

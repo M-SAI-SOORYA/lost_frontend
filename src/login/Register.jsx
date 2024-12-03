@@ -19,18 +19,13 @@ const Register = () => {
         axios.post('https://lost-backend-hvej.onrender.com/register', { name, email, password })
             .then(result => {
                 if (result.data === "Already registered") {
-                    Swal.fire({
-                        title: 'Already Registered',
-                        text: 'E-mail already registered! Please Login to proceed.',
-                        icon: 'info',
-                        confirmButtonText: 'OK'
-                    });
+                    alert("Already Registered!")
                     navigate('/login');
                 } else {
                     Swal.fire({
-                        title: 'Success',
-                        text: 'Registered successfully! Please Login to proceed.',
-                        icon: 'success',
+                        title: 'Registered Successfully',
+                        text: 'E-mail already registered! Please Login to proceed.',
+                        icon: 'info',
                         confirmButtonText: 'OK'
                     });
                     navigate('/login');
@@ -51,7 +46,7 @@ const Register = () => {
             <div>
                 <h1>Lost and Found</h1>
             </div>
-        
+            <br/>
             <div className="d-flex justify-content-center align-items-center flex-grow-1 px-3">
                 <div className="bg-white p-4 rounded shadow w-100" style={{ maxWidth: '700px' }}>
                     <h2 className="mb-3 text-primary text-center">Register</h2>

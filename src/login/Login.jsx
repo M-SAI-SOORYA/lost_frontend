@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import ParticlesBackground from "../components/Particle.jsx";
 import './log.css';
 import Swal from 'sweetalert2';
-const Login = () => {
+const Login = ({setIsAuthenticated }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -20,13 +20,19 @@ const Login = () => {
                     // alert('Login successful!');
                     Swal.fire({
                         title: 'Success',
-                        text: 'Login successfully! Good to Go!',
+                        text: 'Login successfully! Start Posting Items!',
                         icon: 'success',
                         confirmButtonText: 'OK'
                     });
+                    setIsAuthenticated(true);
+                    localStorage.setItem("isAuthenticated", "true");
                     navigate('/home');
                 } else {
                     alert('Incorrect password! Please try again.');
+                    setIsAuthenticated(false);
+                    localStorage.setItem("isAuthenticated", "false");
+                    // navigate('/home');
+                    // setIsAuthenticated(false);
                 }
             })
             .catch(err => console.log(err));
